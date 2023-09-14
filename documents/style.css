@@ -1,0 +1,207 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+/*  */
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+/* primary */
+.color-dark-cyan {
+    color: hsl(158, 36%, 37%);
+}
+.color-cream {
+    color: hsl(30, 38%, 92%);
+}
+/* Neutral */
+.color-very-dark-blue {
+    color: hsl(212, 21%, 14%);
+}
+.color-grayish-blue {
+    color: hsl(228, 12%, 48%);
+}
+.color-white {
+    color: hsl(0, 0%, 100%);
+}
+/* background colors */
+.bg-color-cream {
+    background-color: hsl(30, 38%, 92%);
+}
+/*  */
+
+/* root */
+:root {
+    --color-dark-cyan: hsl(158, 36%, 37%);
+    --color-darker-cyan: hsl(158, 36%, 20%);
+    --color-cream : hsl(30, 38%, 92%);
+    --color-very-dark-blue: hsl(212, 21%, 14%);
+    --color-grayish-blue: hsl(228, 12%, 48%);
+    --color-white: hsl(0, 0%, 100%);
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+    --font-fraunces: 'Fraunces', serif;
+    --font-montserrat: 'Montserrat', sans-serif; /* base */
+}
+
+/* root */
+
+/* body styles */
+body {
+    font-family: var(--font-montserrat);
+    font-weight: var(--fw-regular);
+    font-size: 0.875rem;
+    color: var(--color-grayish-blue);
+    background-color: var(--color-cream);
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    margin: 1rem;
+}
+/* body styles */
+
+/* product styles */
+.product {
+    display: grid;
+    background-color: var(--color-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+@media (min-width: 600px) {
+    .product {
+        grid-template-columns: 1fr 1fr;
+        /* padding: 2rem; */
+    }
+}
+/* product styles */
+
+/* product-content styles */
+.product-content {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+@media (min-width: 625px) {
+    .product-content {
+        padding: 2rem;
+    }
+}
+/* product-content styles */
+
+/* product-category styles */
+.product-category {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+/* product-category styles */
+
+/* product-title styles */
+.product-title {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-family: var(--font-fraunces);
+    color: var(--color-very-dark-blue);
+}
+/* product-title styles */
+
+/* flex-group styles */
+.flex-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+/* flex-group styles */
+
+/* product-price styles */
+.product-price {
+    font-size: 2rem;
+    font-family: var(--font-fraunces);
+    color: var(--color-dark-cyan);
+
+}
+/* product-price styles */
+
+/* product-original-price styles */
+.product-original-price {
+    text-decoration: line-through;
+}
+/* product-original-price styles */
+
+/* button styles */
+.button {
+    padding: 0.75em 1.5em;
+    color: var(--color-white);
+    background-color: var(--color-dark-cyan);
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: var(--fw-bold);
+    font-size: 0.925rem;
+}
+.button:hover,
+:focus {
+    background-color: var(--color-darker-cyan);
+}
+.button[data-icon="shopping-cart"]::before {
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url(images/icon-cart.svg);
+
+}
+/* button styles */
+
+/* footer styles */
+footer {
+    margin-top: 2rem;
+}
+/* footer styles */
